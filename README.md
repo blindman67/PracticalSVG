@@ -29,10 +29,7 @@ document.body.appendChild(svgNode);
 svgNode.setAttribute("width", (Number(svgNode.getAttribute("width").replace("px","")) + (resizeBy * 2)) + "px");
 svgNode.setAttribute("height", (Number(svgNode.getAttribute("height").replace("px","")) + (resizeBy * 2)) + "px");
 const points = path.getAttribute("points").split(" ").map(point => point.split(" ").map(coord => Number(coord)));
-points.forEach(point => {
-    point[0] += 10;
-    point[1] += 10;
-})
+points.forEach(point => { point[0] += 10; point[1] += 10;})
 path.setAttribute("points", points.map(point=>point.join(",").join(" "));
 ```
 
@@ -58,7 +55,11 @@ The resulting SVG is identical, but the amount of effort as a programmer is grea
 
 ## Using Practical SVG
 
-Add the Javascript file to the page, or use the module version in import.
+Add the Javascript file to the page.
+
+```Javascript
+<script src="createSVG.js"></script>
+```
 
 To create a simple SVG node.
 
